@@ -28,29 +28,65 @@ namespace femsolution.Mesh
                 storage.Add(t);
             }
 
-            var numEntityBlocks = storage[0][0];
+            var numEntityBlocks = (int)storage[0][0];
             var numNodes = (int)storage[0][1];
             var minNodeTag = storage[0][2];
             var maxNodeTag = storage[0][3];
             storage.RemoveAt(0);
 
-            var nodes = new List<Nodes>();
+            var N_nodes = 0;
 
-            for (int i = 0 ; i < storage.Count; i += 3)
+            var nodesList = new List<Nodes>();
+
+            for (int i = 0; i < numNodes; i++)
             {
                 var item = new Nodes();
-                item.EntityDim = (int)storage[i][0];
-                item.EntityTag = (int)storage[i][1];
-                item.Parametric = (int)storage[i][2];
-                item.NumNodesInBlock = (int)storage[i][3];
+                item.NodeTag = 0;
+                item.X = 0.0;
+                item.Y = 0.0;
+                item.Z = 0.0;
 
-                item.NodeTag = (int)storage[i + 1][0];
+                nodesList.Add(item);
+            }
 
-                item.X = storage[i + 2][0];
-                item.Y = storage[i + 2][1];
-                item.Z = storage[i + 2][2];
+            var nodes = nodesList.ToArray();
 
-                nodes.Add(item);
+            var k = 0;
+            var unorganized_node_index = 0;
+            while (k < storage.Count)
+            {
+                var EntityDim = (int)storage[k][0];
+                var EntityTag = (int)storage[k][1];
+                var Parametric = (int)storage[k][2];
+                var NumNodesInBlock = (int)storage[k][3];
+
+                N_nodes += NumNodesInBlock;
+
+                for (int node = 0; node < NumNodesInBlock; node++)
+                {
+                    var index = (int)storage[k + node + 1][0];
+                    nodes[index - 1].NodeTag = index;
+                }
+
+                for (int node = 0; node < NumNodesInBlock; node++)
+                {
+                    if (NumNodesInBlock > 1)
+                    {
+                        nodes[unorganized_node_index].X = storage[k + node + NumNodesInBlock + 1][0];
+                        nodes[unorganized_node_index].Y = storage[k + node + NumNodesInBlock + 1][1];
+                        nodes[unorganized_node_index].Z = storage[k + node + NumNodesInBlock + 1][2];
+                    }
+                    else
+                    {
+                        nodes[unorganized_node_index].X = storage[k + node + 2][0];
+                        nodes[unorganized_node_index].Y = storage[k + node + 2][1];
+                        nodes[unorganized_node_index].Z = storage[k + node + 2][2];
+                    }
+                    
+                    unorganized_node_index++;
+                }
+
+                k = k + NumNodesInBlock + NumNodesInBlock + 1;
             }
 
             storage.Clear();

@@ -24,13 +24,5 @@
         /// Координата z
         /// </summary>
         public double Z { get; set; }
-
-        public int EntityDim { get; set; }
-
-        public int EntityTag { get; set; }
-
-        public int Parametric { get; set; }
-
-        public int NumNodesInBlock { get; set; }
     }
 }
