@@ -1,7 +1,0 @@
-C:\Users\gnaty\source\repos\femsolution\femsolution\bin\Debug\femsolution.exe.config
-C:\Users\gnaty\source\repos\femsolution\femsolution\bin\Debug\femsolution.exe
-C:\Users\gnaty\source\repos\femsolution\femsolution\bin\Debug\femsolution.pdb
-C:\Users\gnaty\source\repos\femsolution\femsolution\obj\Debug\femsolution.csprojAssemblyReference.cache
-C:\Users\gnaty\source\repos\femsolution\femsolution\obj\Debug\femsolution.csproj.CoreCompileInputs.cache
-C:\Users\gnaty\source\repos\femsolution\femsolution\obj\Debug\femsolution.exe
-C:\Users\gnaty\source\repos\femsolution\femsolution\obj\Debug\femsolution.pdb
