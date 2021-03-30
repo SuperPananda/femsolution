@@ -11,18 +11,8 @@
         public int NodeTag { get; set; }
 
         /// <summary>
-        /// Координата x
+        /// Точка узла
         /// </summary>
-        public double X { get; set; }
-
-        /// <summary>
-        /// Координата y
-        /// </summary>
-        public double Y { get; set; }
-
-        /// <summary>
-        /// Координата z
-        /// </summary>
-        public double Z { get; set; }
+        public Point Point { get; set; }
     }
 }

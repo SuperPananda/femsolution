@@ -7,9 +7,9 @@ namespace femsolution
     {
         static void Main(string[] args)
         {
-            var f = new ReadMesh();
+            var f = new ReadingMesh();
 
-            f.ReadMeshFile();
+            f.ReadingFromFile();
 
             Console.Write("Введите свое имя: ");
             string name = Console.ReadLine();       // вводим имя

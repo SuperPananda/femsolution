@@ -43,9 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mesh\Edges.cs" />
     <Compile Include="Mesh\Elements.cs" />
     <Compile Include="Mesh\Nodes.cs" />
-    <Compile Include="Mesh\ReadMesh.cs" />
+    <Compile Include="Mesh\Point.cs" />
+    <Compile Include="Mesh\ReadingMesh.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

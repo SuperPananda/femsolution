@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
 namespace femsolution.Mesh
 {
-    public class ReadMesh
+    public class ReadingMesh
     {
-        public void ReadMeshFile()
+        public void ReadingFromFile()
         {
             string path = @"guad3.msh";
 
@@ -42,9 +41,9 @@ namespace femsolution.Mesh
             {
                 var item = new Nodes();
                 item.NodeTag = 0;
-                item.X = 0.0;
-                item.Y = 0.0;
-                item.Z = 0.0;
+                item.Point.X = 0.0;
+                item.Point.Y = 0.0;
+                item.Point.Z = 0.0;
 
                 nodesList.Add(item);
             }
@@ -72,15 +71,15 @@ namespace femsolution.Mesh
                 {
                     if (NumNodesInBlock > 1)
                     {
-                        nodes[unorganized_node_index].X = storage[k + node + NumNodesInBlock + 1][0];
-                        nodes[unorganized_node_index].Y = storage[k + node + NumNodesInBlock + 1][1];
-                        nodes[unorganized_node_index].Z = storage[k + node + NumNodesInBlock + 1][2];
+                        nodes[unorganized_node_index].Point.X = storage[k + node + NumNodesInBlock + 1][0];
+                        nodes[unorganized_node_index].Point.Y = storage[k + node + NumNodesInBlock + 1][1];
+                        nodes[unorganized_node_index].Point.Z = storage[k + node + NumNodesInBlock + 1][2];
                     }
                     else
                     {
-                        nodes[unorganized_node_index].X = storage[k + node + 2][0];
-                        nodes[unorganized_node_index].Y = storage[k + node + 2][1];
-                        nodes[unorganized_node_index].Z = storage[k + node + 2][2];
+                        nodes[unorganized_node_index].Point.X = storage[k + node + 2][0];
+                        nodes[unorganized_node_index].Point.Y = storage[k + node + 2][1];
+                        nodes[unorganized_node_index].Point.Z = storage[k + node + 2][2];
                     }
                     
                     unorganized_node_index++;
