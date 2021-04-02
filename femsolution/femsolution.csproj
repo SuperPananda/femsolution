@@ -34,7 +34,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,8 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnalyticalSolution.cs" />
     <Compile Include="Mesh\Edges.cs" />
     <Compile Include="Mesh\Elements.cs" />
+    <Compile Include="Mesh\Area.cs" />
     <Compile Include="Mesh\Nodes.cs" />
     <Compile Include="Mesh\Point.cs" />
     <Compile Include="Mesh\ReadingMesh.cs" />

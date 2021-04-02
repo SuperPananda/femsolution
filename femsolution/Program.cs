@@ -7,9 +7,11 @@ namespace femsolution
     {
         static void Main(string[] args)
         {
-            var f = new ReadingMesh();
+            //var area = new Area().GetArea("guad4.msh");
 
-            f.ReadingFromFile();
+            var nodes = new ReadingMesh("guad5.msh").GetNodes();
+
+            new AnalyticalSolution().GetAnalyticalSolution(nodes);
 
             Console.Write("Введите свое имя: ");
             string name = Console.ReadLine();       // вводим имя

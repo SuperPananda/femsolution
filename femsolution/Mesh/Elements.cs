@@ -13,6 +13,6 @@
         /// <summary>
         /// Узлы входящие в конечный элемент
         /// </summary>
-        public int[] Nodes { get; set; }
+        public Nodes[] Nodes { get; set; }
     }
 }

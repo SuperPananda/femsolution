@@ -13,11 +13,11 @@
         /// <summary>
         /// Точка первая
         /// </summary>
-        public Point Point1 { get; set; }
+        public Nodes Node1 { get; set; }
 
         /// <summary>
         /// Точка вторая
         /// </summary>
-        public Point Point2 { get; set; }
+        public Nodes Node2 { get; set; }
     }
 }
